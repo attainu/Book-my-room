@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import {upadateLoggedIn} from './../actions';
 import { useState } from 'react';
 
-//ui
+//User Interface
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
