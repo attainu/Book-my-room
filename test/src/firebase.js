@@ -4,15 +4,15 @@ import 'firebase/firebase-firestore';
 
 
 var firebaseConfig = {
-    apiKey: "AIzaSyCV65nTM-hvNozRboUkUVFUHZfbi76m0No",
-    authDomain: "indianexams-bcab7.firebaseapp.com",
-    databaseURL: "https://indianexams-bcab7.firebaseio.com",
-    projectId: "indianexams-bcab7",
-    storageBucket: "indianexams-bcab7.appspot.com",
-    messagingSenderId: "645433905172",
-    appId: "1:645433905172:web:af0d661546dcf3233f5701",
-    measurementId: "G-QXXN1H3YDR"
-};
+    apiKey: "AIzaSyCCrJpzkEXNV0YU43CexvSYLqD6NJBxF2c",
+    authDomain: "bookmyhotel-3f21f.firebaseapp.com",
+    databaseURL: "https://bookmyhotel-3f21f.firebaseio.com",
+    projectId: "bookmyhotel-3f21f",
+    storageBucket: "bookmyhotel-3f21f.appspot.com",
+    messagingSenderId: "357423416665",
+    appId: "1:357423416665:web:a4a85d91c0bd18d4327848",
+    measurementId: "G-WFVQKJG4DZ"
+  };
 
 
 class Firebase {

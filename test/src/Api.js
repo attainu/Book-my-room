@@ -15,7 +15,7 @@ export  async function GetHotelList(city) {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-            "x-rapidapi-key": "20356d53e0mshbafae165f73c7d3p1e7b88jsncbc902a721e1"
+            "x-rapidapi-key": "aef497bcd0mshf0aaea89b1d71efp10b122jsn32a60ff4e740"
         }
     };
     var res = await fetch(url, options);
@@ -34,23 +34,21 @@ export  async function GetHotelList(city) {
 async function GetCityId(city) {
 
     city = city.replace(" ", "%20");
-    //location search
-    //var url = `https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${city}`;
+    
     //location auto complite
     var url = `https://tripadvisor1.p.rapidapi.com/locations/auto-complete?lang=en_US&units=km&query=${city}`
 
-    //var url="https://cat-fact.herokuapp.com/facts";
     var options = {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-            "x-rapidapi-key": "20356d53e0mshbafae165f73c7d3p1e7b88jsncbc902a721e1"
+            "x-rapidapi-key": "aef497bcd0mshf0aaea89b1d71efp10b122jsn32a60ff4e740"
         }
     };
     var res = await fetch(url, options);
     var data = await res.json();
 
-    console.log(data);
+    
     var loc_id;
     for (const i of data.data) {
         if (i.result_type == "geos") {
@@ -62,30 +60,32 @@ async function GetCityId(city) {
 
 }
 
-async function GetHotelDetails(location_id){
-    var url = `https://tripadvisor1.p.rapidapi.com/hotels/get-details?adults=1&nights=2&currency=USD&lang=en_US&child_rm_ages=7%252C10&checkin=2020-01-15&location_id=${location_id}`;
+export async function GetHotelDetails(location_id){
+    var url = `https://tripadvisor1.p.rapidapi.com/hotels/get-details?location_id=${location_id}&currency=INR`;
     var options = {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-            "x-rapidapi-key": "20356d53e0mshbafae165f73c7d3p1e7b88jsncbc902a721e1"
+            "x-rapidapi-key": "aef497bcd0mshf0aaea89b1d71efp10b122jsn32a60ff4e740"
         }
     };
     var res = await fetch(url, options);
     var data = await res.json();
-    console.log(data);
+    
+    return data;
 }
 
-async function GetPhotosFromLoactionId(location_id){
-    var url = `https://tripadvisor1.p.rapidapi.com/photos/list?lang=en_US&currency=USD&limit=50&location_id=${location_id}`;
+export async function GetPhotosFromLoactionId(location_id){
+    var url = `https://tripadvisor1.p.rapidapi.com/photos/list?lang=en_US&currency=INR&limit=50&location_id=${location_id}`;
     var options = {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-            "x-rapidapi-key": "20356d53e0mshbafae165f73c7d3p1e7b88jsncbc902a721e1"
+            "x-rapidapi-key": "aef497bcd0mshf0aaea89b1d71efp10b122jsn32a60ff4e740"
         }
     };
     var res = await fetch(url, options);
     var data = await res.json();
-    console.log(data);
+    
+    return data;
 }

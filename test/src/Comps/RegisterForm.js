@@ -28,7 +28,9 @@ function SingUpComp({handleClose}) {
 
     return (
         <>
-            <Modal.Body>          
+            <Modal.Body>
+                        
+                    
             <Form>
             <Form.Group as={Col}>
                 <Form.Label>
@@ -55,7 +57,13 @@ function SingUpComp({handleClose}) {
                     Sign Up
                 </Button>
             </Modal.Footer>
+
+        
+        
+        
+        
         </>
     );
 }
+
 export default SingUpComp;

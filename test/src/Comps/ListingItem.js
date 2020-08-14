@@ -28,5 +28,4 @@ function Listing(props) {
     }
     
 }
-
 export default Listing;

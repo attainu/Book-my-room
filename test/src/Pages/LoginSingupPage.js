@@ -4,8 +4,8 @@ import "./../CustomCss/LoginSingup.css";
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { useDispatch, useSelector } from 'react-redux';
 import { upadateLoggedIn } from './../actions';
-import Singinimg from './../images/signin.jpg'
-import Singupimg from './../images/signup.jpg'
+import img from './../images/bg-01.jpg'
+
 
 
 
@@ -20,7 +20,7 @@ function Main(props) {
 
     async function Login(e) {
         e.preventDefault();
-        
+
 
         var email = document.getElementById("email").value;
         var pass = document.getElementById("pass").value;
@@ -40,23 +40,20 @@ function Main(props) {
         e.preventDefault();
         var email = document.getElementById("remail").value;
         var pass = document.getElementById("rpass").value;
-        var rep_pass = document.getElementById("re_pass").value;
         var name = document.getElementById("name").value;
-        console.log(pass, rep_pass);
-        if (pass == rep_pass) {
-            try {
-                await firebase.register(email, pass, name);
-                setVieSingin(true);
-            } catch (error) {
-                alert(error.message);
-            }
-        } else {
-            alert("passwords dont much")
+
+
+        try {
+            await firebase.register(email, pass, name);
+            setVieSingin(true);
+        } catch (error) {
+            alert(error.message);
         }
+
     }
     function SinginPage() {
 
-        
+
 
 
         var uiConfig = {
@@ -72,83 +69,143 @@ function Main(props) {
         }
         return (
 
-            <section className="sign-in">
-                <div className="container">
-                    <div className="signin-content">
-                        <div className="signin-image">
-                            <figure><img src={Singinimg} /></figure>
-                            <a href="#" onClick={() => { setVieSingin(false) }} className="signup-image-link">Create an account</a>
-                        </div>
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100">
+                        <form class="login100-form validate-form">
+                            <span class="login100-form-title p-b-43">
+                                Login to continue
+					</span>
 
-                        <div className="signin-form">
-                            <h2 className="form-title">Sign in</h2>
-                            <form className="register-form" id="login-form">
-                                <div className="form-group">
-                                    <label for="your_name"><i className="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="email" name="email" id="email" placeholder="Your Email" />
-                                </div>
-                                <div className="form-group">
-                                    <label for="your_pass"><i className="zmdi zmdi-lock"></i></label>
-                                    <input type="password" name="pass" id="pass" placeholder="Password" />
+
+                            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="text" name="email" id="email"/>
+                                <span class="focus-input100"></span>
+                                <span class="label-input100">Email</span>
+                            </div>
+
+
+                            <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                <input class="input100" type="password" name="pass" id="pass" />
+                                <span class="focus-input100"></span>
+                                <span class="label-input100">Password</span>
+                            </div>
+
+                            <div class="flex-sb-m w-full p-t-3 p-b-32">
+                                <div class="contact100-form-checkbox">
+                                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" />
+                                    <label class="label-checkbox100" for="ckb1">
+                                        Remember me
+							        </label>
                                 </div>
 
-                                <div className="form-group form-button">
-                                    <input type="submit" name="signin" id="signin" onClick={Login} className="form-submit" value="Log in" />
+                                <div>
+                                    <a href="#" class="txt1">
+                                        Forgot Password?
+							</a>
                                 </div>
-                            </form>
-                            <div className="social-login">
-                                <span className="social-label">Or login with</span>
+                            </div>
+
+
+                            <div class="container-login100-form-btn">
+                                <button class="login100-form-btn" onClick={Login}>
+                                    Login
+						</button>
+                            </div>
+
+                            <div class="text-center p-t-46 p-b-20">
+                                <span class="txt2" onClick={() => { setVieSingin(false) }} style={{ cursor: "pointer" }}>
+                                    or sign up
+						</span>
+                            </div>
+
+                            <div class="login100-form-social flex-c-m">
                                 <StyledFirebaseAuth
                                     uiConfig={uiConfig}
                                     firebaseAuth={firebase.auth}
 
                                 />
                             </div>
+                        </form>
+
+                        <div className="login100-more">
+
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
         )
     }
 
     function SingupPage() {
         return (
-            <section class="signup">
-                <div class="container">
-                    <div class="signup-content">
-                        <div class="signup-form">
-                            <h2 class="form-title">Sign up</h2>
-                            <form method="POST" class="register-form" id="register-form">
-                                <div class="form-group">
-                                    <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="text" name="name" id="name" placeholder="Your Name" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                    <input type="email" name="email" id="remail" placeholder="Your Email" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="password" name="pass" id="rpass" placeholder="Password" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                    <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" />
+            <>
+                <div class="limiter">
+                    <div class="container-login100">
+                        <div class="wrap-login100">
+                            <form class="login100-form validate-form">
+                                <span class="login100-form-title p-b-43">
+                                    Register
+					</span>
+
+                                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                    <input class="input100" type="text" id="name" />
+                                    <span class="focus-input100"></span>
+                                    <span class="label-input100">Name</span>
                                 </div>
 
-                                <div class="form-group form-button">
-                                    <input type="submit" name="signup" id="signup" onClick={Singup} class="form-submit" value="Register" />
+                                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                    <input class="input100" type="text" name="email" id="remail" />
+                                    <span class="focus-input100"></span>
+                                    <span class="label-input100">Email</span>
                                 </div>
+
+
+                                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                    <input class="input100" type="password" name="pass" id="rpass" />
+                                    <span class="focus-input100"></span>
+                                    <span class="label-input100">Password</span>
+                                </div>
+
+                                <div class="flex-sb-m w-full p-t-3 p-b-32">
+                                    <div class="contact100-form-checkbox">
+                                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" />
+                                        <label class="label-checkbox100" for="ckb1">
+                                            Remember me
+							        </label>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="txt1">
+                                            Forgot Password?
+							</a>
+                                    </div>
+                                </div>
+
+
+                                <div class="container-login100-form-btn">
+                                    <button class="login100-form-btn" onClick={Singup}>
+                                        Register
+						</button>
+                                </div>
+
+                                <div class="text-center p-t-46 p-b-20">
+                                    <span class="txt2" onClick={() => { setVieSingin(true) }} style={{ cursor: "pointer" }}>
+                                        or sign ip
+						</span>
+                                </div>
+
+
                             </form>
-                        </div>
-                        <div class="signup-image">
-                            <figure><img src={Singupimg} alt="sing up image" /></figure>
-                            <a href="#" class="signup-image-link" onClick={() => { setVieSingin(true) }}>I am already member</a>
+
+                            <div className="login100-more">
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </>
         );
     }
 
