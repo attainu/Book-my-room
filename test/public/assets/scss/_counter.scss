@@ -1,0 +1,40 @@
+/* Counter Css Start
+============================================================================================ */
+.counter {
+	margin-top: 50px;
+	img {
+		max-width: 70px;
+		max-height: 70px;
+	}
+	.counter-box {
+		font-size: 14px;
+	}
+}
+
+span.counter-number, .fact-num {
+    display: block;
+    color: $secondary-color;
+    font-size: 55px;
+    font-weight: $fw-600;
+    font-family: $title-font;
+    line-height: 85px;
+}
+
+.counter-box.style-two {
+    text-align: center;
+    font-size: 18px;
+    font-weight: $fw-600;
+    color: $secondary-color;
+    span.counter-number, .fact-num {
+        display: inline-block;
+    }
+    .fact-icon {
+        margin-bottom: 20px;
+    }
+}
+.counter-up {
+    padding: 100px 0;
+    position: relative;
+}
+/* Counter CSs End
+============================================================================================ */

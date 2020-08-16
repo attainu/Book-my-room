@@ -1,0 +1,118 @@
+/* About Css Page
+============================================================================================ */
+.about-site {
+	.section-title.text-right {
+		span.title-top.with-border {
+			display: inline-block;
+			&::before {
+				left: -80px;
+			}
+		}
+	}
+	.mb-30 {
+		margin-bottom: 30px;
+	}
+	.about-img {
+		height: 570px;
+		margin-top: 50px;
+	}
+	.about-text-box {
+		padding: 60px 45px;
+		position: relative;
+		z-index: 2;
+		margin-top: -105px;
+		margin-bottom: 25px;
+		h2 {
+			font-size: 40px;
+			line-height: 45px;
+			margin-bottom: 30px;
+		}
+	}
+	.btn {
+		margin-top: 45px;
+		padding: 25px 50px;
+		font-size: 15px;
+		border-radius: 35px;
+	}
+	.counter {
+		padding-top: 125px;
+		margin-top: 0;
+	}
+}
+.mission-box {
+	margin-bottom: 30px;
+	.mission-bg {
+		width: 100%;
+		height: 250px;
+		margin-bottom: 35px;
+		@include transition;
+		position: relative;
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			content: '';
+			background-color: $secondary-color;
+			opacity: 0;
+			visibility: hidden;
+			@include transition;
+		}
+		&:hover::before {
+			visibility: visible;
+			opacity: 0.4;
+		}
+	}
+
+	h4 {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+}
+.our-mission {
+	position: relative;
+	z-index: 1;
+	.section-padding {
+		padding-bottom: 100px;
+	}
+	.section-title h1 {
+		margin-bottom: 80px;
+		color: $white;
+	}
+	&::before,
+	&::after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 61%;
+		z-index: -1;
+		background-color: $secondary-color;
+		content: '';
+	}
+	&::after {
+		background: url(../img/shape/14.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: top right;
+	}
+}
+.about-page {
+	.feature-section.section-padding {
+		padding-top: 0;
+	}
+	.feedback-section {
+		background-color: #f1f8ff;
+		.section-title h1 {
+			color: $secondary-color;
+		}
+		&::before {
+			width: 0;
+			height: 0;
+			opacity: 0;
+		}
+	}
+}
+/* About Css Page END
+============================================================================================ */

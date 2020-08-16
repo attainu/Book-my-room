@@ -1,0 +1,264 @@
+/* Feed Back Area
+============================================================================================ */
+.feedback-section {
+	background-color: $secondary-color;
+	position: relative;
+	z-index: 1;
+	&::before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-image: url(../img/shape/05.png);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.section-title h1 {
+		color: $white;
+		margin-bottom: 80px;
+	}
+	.feadback-slide {
+		margin-bottom: 100px;
+		.single-feedback-box {
+			background-color: $white;
+			padding: 70px 50px;
+			font-size: 35px;
+			line-height: 45px;
+			font-weight: $fw-300;
+			position: relative;
+			z-index: 1;
+			&::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				content: '';
+				background-color: transparent;
+				z-index: -1;
+				border: 10px solid transparent;
+				@include transition;
+			}
+			&::after {
+				position: absolute;
+				right: 50px;
+				bottom: 0;
+				width: 77px;
+				height: 55px;
+				content: '';
+				z-index: 2;
+				background-image: url(../img/icons/quote.png);
+				@include transition;
+			}
+			&:hover::before {
+				border-color: $primary-color;
+			}
+			&:hover::after {
+				bottom: 10px;
+			}
+			.feedback-author {
+				font-size: 26px;
+				margin-top: 30px;
+				padding-left: 65px;
+				position: relative;
+				margin-bottom: 0;
+				font-family: $body-font;
+				&::before {
+					position: absolute;
+					left: 0;
+					top: 52%;
+					height: 4px;
+					width: 40px;
+					content: '';
+					background-color: $primary-color;
+					border-radius: 2px;
+				}
+			}
+		}
+		ul.slick-dots {
+			position: absolute;
+			left: 50%;
+			bottom: -100px;
+			transform: translateX(-50%);
+			li {
+				display: inline-block;
+				button {
+					height: 20px;
+					width: 20px;
+					background-color: transparent;
+					border: 1px solid transparent;
+					border-radius: 50%;
+					position: relative;
+					font-size: 0;
+					@include transition;
+					&::before {
+						height: 8px;
+						width: 8px;
+						border-radius: 50%;
+						border: none;
+						background-color: $primary-color;
+						position: absolute;
+						content: '';
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+					}
+				}
+				&.slick-active button {
+					border-color: $primary-color;
+				}
+			}
+		}
+		span.slick-arrow {
+			position: absolute;
+			left: -10%;
+			top: 50%;
+			height: 80px;
+			width: 80px;
+			background: $primary-color;
+			border-radius: 50%;
+			text-align: center;
+			color: $white;
+			line-height: 80px;
+			margin-top: -40px;
+			font-size: 20px;
+			@include transition;
+			cursor: pointer;
+			opacity: 0;
+			visibility: hidden;
+			&.next {
+				left: auto;
+				right: -10%;
+			}
+		}
+	}
+	&:hover {
+		span.slick-arrow {
+			opacity: 1;
+			visibility: visible;
+			left: -18%;
+			&.next {
+				left: auto;
+				right: -18%;
+			}
+		}
+	}
+}
+.feedback-section-two {
+	.section-title h1 {
+		margin-bottom: 80px;
+	}
+}
+.feedback-slider-two {
+	.client-img img {
+		border-radius: 50%;
+		height: 80px;
+		width: 80px;
+	}
+	.client-name {
+		h3{
+			font-size: 26px;
+			line-height: 30px;
+			margin-bottom: 0;
+		}
+		padding-left: 15px;
+		.client-job{
+			font-size: 16px;
+			color: $primary-color;
+			font-weight: $fw-700;
+			margin-top: -10px;
+			display: inline-block;
+		}
+	}
+	.feedback-client-desc {
+		margin-bottom: 35px;
+	}
+	.feedback-desc {
+		font-size: 24px;
+		line-height: 35px;
+		padding-top: 30px;
+		p{
+			margin-bottom: 40px;
+		}
+	}
+	ul.slick-dots {
+		position: absolute;
+		left: 63%;
+		bottom: 30px;
+		transform: translateX(-50%);
+		li {
+			display: inline-block;
+			button {
+				height: 20px;
+				width: 20px;
+				background-color: transparent;
+				border: 1px solid transparent;
+				border-radius: 50%;
+				position: relative;
+				font-size: 0;
+				@include transition;
+				&::before {
+					height: 8px;
+					width: 8px;
+					border-radius: 50%;
+					border: none;
+					background-color: $primary-color;
+					position: absolute;
+					content: '';
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+			&.slick-active button {
+				border-color: $primary-color;
+			}
+		}
+	}
+	span.slick-arrow {
+		position: absolute;
+		left: -18%;
+		top: 50%;
+		height: 80px;
+		width: 80px;
+		background: transparent;
+		border: 3px solid #798299;
+		border-radius: 50%;
+		text-align: center;
+		color: #798299;
+		line-height: 80px;
+		margin-top: -40px;
+		font-size: 20px;
+		@include transition;
+		cursor: pointer;
+		&.next {
+			left: auto;
+			right: -18%;
+		}
+		&:hover{
+			background: $primary-color;
+			color: $white;
+			border-color: $primary-color;
+		}
+	}
+	.client-big-img {
+		position: relative;
+		&::after {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 0;
+			background-image: url(../img/shape/10.png);
+			height: 100%;
+			width: 100%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: top;
+		}
+	}
+}
+/* Feed Back Area End
+============================================================================================ */

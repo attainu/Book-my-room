@@ -1,0 +1,68 @@
+/*----------------------------------------------------
+@File: Default Styles
+@Author: Webtend
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+---------------------------------------------------- */
+
+/*=====================================================================
+@Template Name: Avson HTML Template
+@Author: Webtend
+
+@Default Styles
+
+Table of Content:
+01/ Variables
+02/ Global
+03/ Header
+04/ Booking 
+05/ Tile Gallery
+06/ Counter Boxes
+07/ Room 
+08/ Service
+09/ Call TO Action
+10/ Gallery
+11/ Feature
+12/ Feedback
+13/ Contact
+14/ Product
+15/ Latest Post
+16/ BreadCrumb
+17/ Staff
+18/ Resturent
+19/ Reservation
+20/ Blog
+21/ Blog and Room Details
+22/ About page
+23/ Sidebar
+24/ Footer
+
+=====================================================================*/
+
+@import 'variables';
+@import 'global';
+@import 'header';
+@import 'hero';
+@import 'booking';
+@import 'tile';
+@import 'counter';
+@import 'room';
+@import 'service';
+@import 'cta';
+@import 'gallery';
+@import 'feature';
+@import 'feedback';
+@import 'contact';
+@import 'product';
+@import 'latestpost';
+@import 'breadcrumb';
+@import 'staff';
+@import 'resturent';
+@import 'reserv';
+@import 'blog';
+@import 'details';
+@import 'sidebar';
+@import 'about';
+@import 'footer';
