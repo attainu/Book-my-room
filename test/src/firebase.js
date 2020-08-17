@@ -37,8 +37,5 @@ class Firebase {
         await this.auth.createUserWithEmailAndPassword(email, pass);
         this.auth.currentUser.updateProfile({displayName:name});
     }
-
-
-    
 }
 export default new Firebase();

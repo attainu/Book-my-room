@@ -1,0 +1,83 @@
+/* Start Global css
+============================================================================================ */
+.cta-section {
+	position: relative;
+	z-index: 1;
+	padding: 145px 0;
+	&::after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		content: '';
+		opacity: 0.83;
+		background-color: $secondary-color;
+	}
+	.cta-left-content {
+		color: $white;
+		font-size: 30px;
+		line-height: 38px;
+		font-weight: $fw-600;
+		.btn.filled-btn {
+			font-size: 15px;
+			border-radius: 35px;
+			padding: 24px 50px;
+		}
+		h1 {
+			color: $white;
+			font-size: 130px;
+			margin-top: 35px;
+			margin-bottom: 50px;
+			line-height: 140px;
+		}
+	}
+
+	.video-icon a {
+		height: 100px;
+		width: 100px;
+		background-color: $white;
+		color: $primary-color;
+		border-radius: 50%;
+		line-height: 100px;
+		text-align: center;
+		display: inline-block;
+		font-size: 20px;
+		position: relative;
+		&::before {
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			border: 1px solid #fff;
+			animation: ripple-white 1s linear infinite;
+			border-radius: 50%;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			border: 1px solid #fff;
+			animation: ripple-white 1.5s linear infinite;
+			border-radius: 50%;
+		}
+	}
+
+	h1.big-text {
+	    margin: 0;
+		color: transparent;
+		font-size: 250px;
+		left: 15px;
+		top: 45px;
+		transform: translate(0);
+	}
+
+}
+/* End call to action Css
+============================================================================================ */

@@ -1,0 +1,116 @@
+/* Contact Scetion
+============================================================================================ */
+.brands-section {
+	padding: 70px 0;
+}
+#contactMapOne {
+	height: 580px;
+	width: 100%;
+}
+.contact-box {
+	border: 5px solid $primary-color;
+	margin-top: 50px;
+	padding: 40px 80px;
+	font-size: 24px;
+	a {
+		color: $text-color;
+	}
+	li {
+		margin-bottom: 30px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		i {
+			font-size: 20px;
+			color: $primary-color;
+			margin-right: 10px;
+		}
+	}
+}
+.contact-info-section {
+	padding-top: 125px;
+	padding-bottom: 45px;
+	.contact-info-boxes {
+		margin-top: 40px;
+	}
+	.contact-info-box {
+		margin-bottom: 30px;
+		position: relative;
+		padding: 30px 25px 25px 90px;
+		font-size: 18px;
+		border: 1px solid #dedede;
+		line-height: 38px;
+		a {
+			color: $text-color;
+		}
+		.contact-icon {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 70px;
+			height: 70px;
+			text-align: center;
+			color: $white;
+			background-color: $primary-color;
+			line-height: 70px;
+			font-size: 30px;
+			@include transition;
+		}
+		&:hover {
+			.contact-icon {
+				background-color: $secondary-color;
+			}
+		}
+		h4 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+	}
+}
+.contact-map {
+	height: 670px;
+	width: 100%;
+}
+.contact-form {
+	padding-bottom: 130px;
+	position: relative;
+	margin-top: -110px;
+	.contact-form-wrap {
+		margin-left: -115px;
+		margin-right: -115px;
+		padding: 80px 115px;
+	}
+	.input-wrap {
+		margin-bottom: 30px;
+		input,
+		textarea,
+		::placeholder {
+			font-size: 16px;
+			color: $text-color;
+		}
+	}
+	.btn {
+		padding: 25px 80px;
+		font-size: 15px;
+		border-radius: 36px;
+	}
+	h2.form-title {
+		font-size: 50px;
+		text-align: center;
+		margin-bottom: 60px;
+		padding-bottom: 40px;
+		position: relative;
+		&::after {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+			content: '';
+			background: $primary-color;
+			height: 3px;
+			width: 100px;
+		}
+	}
+}
+/* End contact section
+============================================================================================ */

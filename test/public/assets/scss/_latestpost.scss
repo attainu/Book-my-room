@@ -1,0 +1,58 @@
+/* Latest Blog Post CSS
+============================================================================================ */
+.latest-blog {
+	position: relative;
+	z-index: 1;
+	.section-title h1 {
+		margin-bottom: 80px;
+	}
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-image: url(../img/shape/09.png);
+		background-size: cover;
+		background-position: center top;
+	}
+}
+
+.single-latest-post {
+	.latest-post-desc {
+		background-color: $white;
+		padding: 40px 30px;
+		h6 {
+			line-height: 24px;
+			margin-bottom: 20px;
+			a {
+				color: $secondary-color;
+			}
+		}
+		a.read-more {
+			margin-top: 0;
+		}
+		.post-date {
+			display: inline-block;
+			margin-bottom: 15px;
+			i {
+				margin-right: 10px;
+				color: $primary-color;
+			}
+		}
+	}
+	&.big-post {
+		h6 {
+			font-size: 20px;
+		}
+	}
+	.post-img {
+		overflow: hidden;
+	}
+	&:hover .post-img img {
+		transform: scale(1.1);
+	}
+}
+/* Latest Blog Post CSS End
+============================================================================================ */

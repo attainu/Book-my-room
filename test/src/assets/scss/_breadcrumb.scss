@@ -1,0 +1,42 @@
+.breadcrumb-area {
+	z-index: 1;
+	height: 515px;
+	&::after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $secondary-color;
+		content: '';
+		z-index: -2;
+		opacity: 0.76;
+	}
+	.breadcrumb-content {
+		h1 {
+			color: $white;
+			font-size: 120px;
+			margin-bottom: 30px;
+			line-height: 120px;
+		}
+		li {
+			color: $white;
+			margin-right: 20px;
+			font-size: 35px;
+			line-height: 38px;
+			font-weight: $fw-500;
+			a {
+				color: $primary-color;
+			}
+			i {
+				font-size: 25px;
+			}
+			&::last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	h1.big-text {
+		top: 45%;
+	}
+}

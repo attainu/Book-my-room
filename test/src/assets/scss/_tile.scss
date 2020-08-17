@@ -1,0 +1,31 @@
+/* Tile Gallery
+============================================================================================ */
+.tile-gallery {
+	padding-bottom: 30px;
+	padding-right: 30px;
+	position: relative;
+	.tile-gallery-content {
+		background-color: $primary-color;
+		padding: 40px;
+		color: $white;
+		font-size: 15px;
+		font-weight: $fw-600;
+		line-height: 28px;
+		position: absolute;
+		width: 370px;
+		height: 307px;
+		right: 0;
+		bottom: 0;
+		h3 {
+			font-size: 30px;
+			margin-bottom: 20px;
+			color: $white;
+		}
+		.tile-icon {
+			max-width: 50px;
+			margin-bottom: 35px;
+		}
+	}
+}
+/* End Tile Gallery
+============================================================================================ */

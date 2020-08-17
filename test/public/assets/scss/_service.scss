@@ -1,0 +1,128 @@
+/* Service Start
+============================================================================================ */
+.single-service-box {
+	position: relative;
+	border: 2px solid $third-color;
+	padding: 50px 30px;
+	margin-bottom: 55px;
+	@include transition;
+	.service-icon {
+		text-align: center;
+		margin-bottom: 30px;
+		transform-style: preserve-3d;
+		perspective: 1000px;
+		position: relative;
+		height: 70px;
+		width: 70px;
+		margin-left: auto;
+		margin-right: auto;
+		img {
+			width: 70px;
+			height: 70px;
+			transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+			backface-visibility: hidden;
+		}
+		.first-icon {
+			transform: rotateY(0deg);
+			transform-style: preserve-3d;
+		}
+		.second-icon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 70px;
+			height: 70px;
+			transform: rotateY(180deg);
+			transform-style: preserve-3d;
+		}
+	}
+	h4 {
+		font-size: 24px;
+		line-height: 50px;
+		@include transition;
+	}
+
+	.service-counter {
+		position: absolute;
+		top: -25px;
+		right: 40px;
+		height: 50px;
+		width: 50px;
+		border: 2px solid $third-color;
+		background-color: $white;
+		z-index: 2;
+		line-height: 46px;
+		text-align: center;
+		border-radius: 50%;
+		font-size: 18px;
+		font-weight: $fw-600;
+		@include transition;
+	}
+
+	a.read-more {
+		display: inline-block;
+		font-weight: $fw-700;
+		color: $text-color;
+		margin-top: 20px;
+		text-transform: uppercase;
+		i {
+			margin-left: 6px;
+		}
+	}
+
+	&:hover {
+		background-color: $primary-color;
+		border-color: $primary-color;
+		color: $white;
+		h4,
+		a.read-more {
+			color: $white;
+		}
+		.service-counter {
+			color: $primary-color;
+		}
+		.first-icon {
+			transform: rotateY(-180deg);
+			transform-style: preserve-3d;
+		}
+		.second-icon {
+			transform: rotateY(0deg);
+			transform-style: preserve-3d;
+		}
+	}
+	&.service-white-bg {
+		background-color: $white;
+		&:hover {
+			background-color: $primary-color;
+			border-color: $primary-color;
+			color: $white;
+			h4,
+			a.read-more {
+				color: $white;
+			}
+			.service-counter {
+				color: $primary-color;
+				border-color: $white;
+			}
+			.first-icon {
+				opacity: 0;
+				display: none;
+			}
+			.second-icon {
+				opacity: 1;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.service-section {
+	.section-title h1 {
+		margin-bottom: 75px;
+	}
+	&.section-padding {
+		padding-bottom: 75px;
+	}
+}
+/* End of Service
+============================================================================================ */
