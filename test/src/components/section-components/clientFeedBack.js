@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
-class FeaturesV4 extends Component {
+class ClientFeedBack extends Component {
 
     render() {
 
@@ -92,4 +92,4 @@ class FeaturesV4 extends Component {
         }
 }
 
-export default FeaturesV4
+export default ClientFeedBack;

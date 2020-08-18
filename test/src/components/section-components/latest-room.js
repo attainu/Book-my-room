@@ -48,7 +48,7 @@ class LatestRoom extends Component {
 	                  <li><i className="far fa-ruler-triangle" />72 m</li>
 	                </ul>
 	                <div className="room-price">
-	                  <p>$180.00</p>
+						<button>Search Guest Room</button>
 	                </div>
 	              </div>
 	            </div>
@@ -75,7 +75,7 @@ class LatestRoom extends Component {
 	                  <li><i className="far fa-ruler-triangle" />72 m</li>
 	                </ul>
 	                <div className="room-price">
-	                  <p>$205.00</p>
+					<button>Search Guest Room</button>
 	                </div>
 	              </div>
 	            </div>
@@ -102,7 +102,7 @@ class LatestRoom extends Component {
 	                  <li><i className="far fa-ruler-triangle" />72 m</li>
 	                </ul>
 	                <div className="room-price">
-	                  <p>$199.00</p>
+					<button>Search Guest Room</button>
 	                </div>
 	              </div>
 	            </div>
@@ -129,7 +129,7 @@ class LatestRoom extends Component {
 	                  <li><i className="far fa-ruler-triangle" />72 m</li>
 	                </ul>
 	                <div className="room-price">
-	                  <p>$180.00</p>
+					<button>Search Guest Room</button>
 	                </div>
 	              </div>
 	            </div>
@@ -156,7 +156,7 @@ class LatestRoom extends Component {
 	                  <li><i className="far fa-ruler-triangle" />72 m</li>
 	                </ul>
 	                <div className="room-price">
-	                  <p>$205.00</p>
+					<button>Search Meeting Room</button>
 	                </div>
 	              </div>
 	            </div>
@@ -183,7 +183,7 @@ class LatestRoom extends Component {
 	                  <li><i className="far fa-ruler-triangle" />72 m</li>
 	                </ul>
 	                <div className="room-price">
-	                  <p>$199.00</p>
+					<button>Search Guest Room</button>
 	                </div>
 	              </div>
 	            </div>

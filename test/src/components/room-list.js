@@ -1,19 +1,16 @@
 import React from 'react';
 import Navbar from './global-components/navbar';
-import PageHeader from './global-components/page-header';
 import RoomList from './section-components/room-list';
-
+import BookingForm from './section-components/booking-form';
 import Footer from './global-components/footer';
 
 const RoomListPage = () => {
     return <div>
         <Navbar />
-        <PageHeader headertitle="Our Room" subheader="Room List" />
+        <BookingForm />
         <RoomList />
-        
         <Footer />
     </div>
 }
-
 export default RoomListPage
 

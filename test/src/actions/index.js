@@ -10,3 +10,9 @@ export const upadateFetchedDataFromApi=(data)=>{
         payload:data
     };
 } 
+export const upadateSearch=(data)=>{
+    return{
+        type:"upadateSearch",
+        payload:data
+    };
+} 
