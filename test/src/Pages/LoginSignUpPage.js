@@ -71,9 +71,8 @@ function Main(props) {
                 <div class="container-login100">
                     <div class="wrap-login100">
                         <form class="login100-form validate-form">
-                            <span class="login100-form-title p-b-43">
-                                Login to continue
-					</span>
+                           
+                            <h1 >Login To Continue</h1>
 
                             <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                                 <input class="input100" type="text" name="email" id="email"/>

@@ -13,12 +13,11 @@ function WelcomePage({props}) {
         console.log(props)
         props.history.replace("/login");
     }
-    function NavBara() {
+    function NavBar() {
 
         return (
             
-                
-				<header>
+			<header>
  			  <div className="header-menu-area">
  			    <div className="container-fluid">
  			      <div className="row align-items-center">
@@ -39,34 +38,15 @@ function WelcomePage({props}) {
  			                  <Link to="/room-list">Rooms</Link>
  			                  <ul className="submenu">
  			                    <li><Link to="/room-list">Room List</Link></li>
- 			                    <li><Link to="/room-grid">Room Gird</Link></li>
+ 			                
  			                    <li><Link to="/room-details">Room Details</Link></li>
  			                  </ul>
  			                </li>
 			               
- 			                <li className="have-submenu">
- 			                  <a href="#">Pages</a>
- 			                  <ul className="submenu">
-			                  
-			                 
-			                    
-			                    
-			                    
-			                    
- 			                    <li><Link to="/gallery">Gallery</Link></li>
- 			                    <li><Link to="/contact">Contact</Link></li>
- 			                    <li><Link to="/our-staff">Our Staff</Link></li>
- 			                    <li><Link to="/resturent">Resturent</Link></li>
- 			                    <li><Link to="/reservation">Reservation</Link></li>
- 			                  </ul>
- 			                </li>
- 			                <li><Link to="/gallery">Gallery</Link></li>
  			                <li><Link to="/contact">Contact</Link></li>
  							<li><Link to="/login">Login/SignUp</Link></li>
  			              </ul>
- 			            </nav>
-			            
-			           
+ 			            </nav>			            
  			          </div>
  			        </div>
  			      </div>
@@ -80,7 +60,7 @@ function WelcomePage({props}) {
 
     return (
         <div>
-            <NavBara/>
+            <NavBar/>
         </div>
     );
 }
