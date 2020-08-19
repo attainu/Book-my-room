@@ -10,14 +10,6 @@ export const upadateFetchedDataFromApi=(data)=>{
         payload:data
     };
 } 
-
-export const viewRoomDetails = (data) => {
-    return {
-        type:"viewRoomDetails",
-        payload:data
-    }
-}
-
 export const upadateSearch=(data)=>{
     return{
         type:"upadateSearch",
