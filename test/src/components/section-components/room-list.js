@@ -2,8 +2,26 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import RoomDetails from '../room-details';
+import { connect } from "react-redux";
+import { viewRoomDetails } from './../../actions';
 
 class RoomList extends Component {
+
+	constructor(props){
+		super(props)
+		console.log("RoomList props: ")
+		console.log(props.data)
+
+		this.state = {
+			results : props.data
+		}
+		
+	}
+
+	viewDetails = (locationId) => {
+		// this.props.onRoomDetails(locationId)
+		// Getting Error: TypeError: this.props.onRoomDetails is not a function
+	}
 
 	render() {
 
@@ -16,7 +34,6 @@ class RoomList extends Component {
 					<div className="col-lg-4">
 						<div className="sidebar-wrap">
 							<div className="widget fillter-widget">
-								<h4 className="widget-title">Your Reservation</h4>
 								<form>
 									<div className="input-wrap">
 										<input type="text" placeholder="Location" id="location" />
@@ -110,159 +127,45 @@ class RoomList extends Component {
 						</div>
 					</div>
 					<div className="col-lg-8">
+
 						{/* Single Room */}
-						<div className="single-room list-style avson-go-top">
-							<div className="row align-items-center no-gutters">
-								<div className="col-lg-6">
-									<div className="room-thumb">
-										<img src={publicUrl + "assets/img/rooms/10.jpg"} alt="Room" />
-									</div>
-								</div>
-								<div className="col-lg-6">
-									<div className="room-desc">
-									
-											<h1>Hotel Name</h1>
-	
-										<h4><Link to="/room-details">Modern Guest Rooms</Link></h4>
-										<ul className="room-info list-inline">
-											<li><i className="far fa-bed" />3 Bed</li>
-											<li><i className="far fa-bath" />2 Baths</li>
-											<li><i className="far fa-ruler-triangle" />72 m</li>
-										</ul>
-										<div className="room-price">
-											<div>
-										
-												<button  className="btn btn-primary"><Link to="/room-details">View Details</Link></button>
-												<button  className="btn btn-dark">Book</button>
+						{this.state.results.map(result => (
+							<div key={result.location_id}>
+
+								<div className="single-room list-style avson-go-top">
+									<div className="row align-items-center no-gutters">
+										<div className="col-lg-6">
+											<div className="room-thumb">
+												<img src={publicUrl + "assets/img/rooms/10.jpg"} alt="Room" />
 											</div>
 										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* Single Room */}
-						<div className="single-room list-style avson-go-top">
-							<div className="row align-items-center no-gutters">
-								<div className="col-lg-6">
-									<div className="room-thumb">
-										<img src={publicUrl + "assets/img/rooms/11.jpg"} alt="Room" />
-									</div>
-								</div>
-								<div className="col-lg-6">
-									<div className="room-desc">
-									<h1>Hotel Name</h1>
-										<h4><Link to="/room-details">Conference Room</Link></h4>
-										<ul className="room-info list-inline">
-											<li><i className="far fa-bed" />3 Bed</li>
-											<li><i className="far fa-bath" />2 Baths</li>
-											<li><i className="far fa-ruler-triangle" />72 m</li>
-										</ul>
-										<div className="room-price">
-											<div>
-											<button  className="btn btn-primary"><Link to="/room-details">View Details</Link></button>
-												<button  className="btn btn-dark">Book</button>
+										<div className="col-lg-6">
+											<div className="room-desc">
+											
+												<h1>{result.name}</h1>
+			
+												<h4><Link to="/room-details">{result.ranking}</Link></h4>
+												<div> {result.location_string} </div>
+												<ul className="room-info list-inline">
+													<li><i className="far fa-bed" />3 Bed</li>
+													<li><i className="far fa-bath" />2 Baths</li>
+													<li><i className="far fa-ruler-triangle" />72 m</li>
+												</ul>
+												<div className="room-price">
+													<div>
+														<button  className="btn btn-primary" onClick={() => this.viewDetails(result.location_id) }>View Details</button>
+														<button  className="btn btn-dark">Book</button>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 
-							</div>
-						</div>
-						{/* Single Room */}
-						<div className="single-room list-style avson-go-top">
-							<div className="row align-items-center no-gutters">
-								<div className="col-lg-6">
-									<div className="room-thumb">
-										<img src={publicUrl + "assets/img/rooms/12.jpg"} alt="Room" />
-									</div>
-								</div>
-								<div className="col-lg-6">
-									<div className="room-desc">
-									<h1>Hotel Name</h1>
-										<h4><Link to="/room-details">Deluxe Couple Room</Link></h4>
-										<ul className="room-info list-inline">
-											<li><i className="far fa-bed" />3 Bed</li>
-											<li><i className="far fa-bath" />2 Baths</li>
-											<li><i className="far fa-ruler-triangle" />72 m</li>
-										</ul>
-										<div className="room-price">
-											<div>
-											<button  className="btn btn-primary"><Link to="/room-details">View Details</Link></button>
-												<button  className="btn btn-dark">Book</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* Single Room */}
-						<div className="single-room list-style avson-go-top">
-							<div className="row align-items-center no-gutters">
-								<div className="col-lg-6">
-									<div className="room-thumb">
-										<img src={publicUrl + "assets/img/rooms/13.jpg"} alt="Room" />
-									</div>
-								</div>
-								<div className="col-lg-6">
-									<div className="room-desc">
-									<h1>Hotel Name</h1>
-										<h4><Link to="/room-details">Conference Room</Link></h4>
-										<ul className="room-info list-inline">
-											<li><i className="far fa-bed" />3 Bed</li>
-											<li><i className="far fa-bath" />2 Baths</li>
-											<li><i className="far fa-ruler-triangle" />72 m</li>
-										</ul>
-										<div className="room-price">
-											<div>
-											<button  className="btn btn-primary"><Link to="/room-details">View Details</Link></button>
-												<button  className="btn btn-dark">Book</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* Single Room */}
-						<div className="single-room list-style avson-go-top">
-							<div className="row align-items-center no-gutters">
-								<div className="col-lg-6">
-									<div className="room-thumb">
-										<img src={publicUrl + "assets/img/rooms/14.jpg"} alt="Room" />
-									</div>
-								</div>
-								<div className="col-lg-6">
-									<div className="room-desc">
-									<h1>Hotel Name</h1>
-										<h4><Link to="/room-details">Deluxe Couple Room</Link></h4>
-										<ul className="room-info list-inline">
-											<li><i className="far fa-bed" />3 Bed</li>
-											<li><i className="far fa-bath" />2 Baths</li>
-											<li><i className="far fa-ruler-triangle" />72 m</li>
-										</ul>
-										<div className="room-price">
-											<div>
-												<button onClick={RoomDetails} className="btn btn-primary">View Details</button>
-												<button  className="btn btn-dark">Book</button>
-											</div>
-										</div>
-									</div>
-								</div>
 								
 							</div>
-							<div className="row">
-									<div className="col-12">
-										<div className="pagination-wrap">
-											<ul className="list-inline">
-												<li><a href=""><i className="far fa-angle-left" /></a></li>
-												<li className="active"><a href="">01</a></li>
-												<li><a href="">02</a></li>
-												<li><a href="">03</a></li>
-												<li><a href=""><i className="far fa-angle-right" /></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-						</div>
+						))}
+						
 					</div>
 				</div>
 

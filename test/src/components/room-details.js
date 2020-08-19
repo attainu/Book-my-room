@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from './global-components/navbar';
-import RoomDetailsSection from './section-components/room-details';
+import VisibleRoomDetails from './section-components/visible-room-details';
 import Contact from './section-components/contact';
 import Footer from './global-components/footer';
 
 const RoomDetails = () => {
     return <div>
         <Navbar />
-        <RoomDetailsSection />
+        <VisibleRoomDetails />
         <Contact />
         <Footer />
     </div>
