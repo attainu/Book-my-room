@@ -34,15 +34,7 @@ function WelcomePage({props}) {
  			                <li >
  			                  <Link to="/">Home</Link>
  			                </li>
- 			                <li className="have-submenu">
- 			                  <Link to="/room-list">Rooms</Link>
- 			                  <ul className="submenu">
- 			                    <li><Link to="/room-list">Room List</Link></li>
- 			                
- 			                    <li><Link to="/room-details">Room Details</Link></li>
- 			                  </ul>
- 			                </li>
-			               
+ 			               
  			                <li><Link to="/contact">Contact</Link></li>
  							<li><Link to="/login">Login/SignUp</Link></li>
  			              </ul>

@@ -1,6 +1,6 @@
 
 
-const dataFromApi = (state=null,action)=>{
+const dataFromApi = (state=[],action)=>{
     if(action.type=="upadateFetchedDataFromApi"){
         state=action.payload;
         return state;
