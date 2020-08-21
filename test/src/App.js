@@ -6,6 +6,7 @@ import RoomList from './components/room-list';
 import RoomDetails from './components/room-details';
 import Contact from './components/contact';
 import Main from './Pages/LoginSignUpPage'
+import Checkout from './components/booking-components/Checkout';
 import {createStore} from 'redux';
 import allReducers from "./reducers";
 import {Provider} from 'react-redux';
@@ -25,7 +26,8 @@ class Root extends Component {
 						<Route exact path="/loggedin" component={Welcomepage} />
 	                    <Route path="/room-list" component={RoomList} />
 	                    <Route path="/room-details" component={RoomDetails} />
-	                    <Route path="/contact" component={Contact} />     
+	                    <Route path="/contact" component={Contact} />    
+						<Route path="/room-booking" component={Checkout} />  
 	                </Switch>
 	                </div>
                 </Router>

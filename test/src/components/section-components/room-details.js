@@ -269,9 +269,9 @@ class RoomDetails extends Component {
 										</select>
 									</div>
 									<div className="input-wrap">
-										<button type="submit" className="btn filled-btn btn-block">
+									<Link to="/room-booking" className="btn filled-btn btn-block">
 											book now <i className="far fa-long-arrow-right" />
-										</button>
+										</Link>
 									</div>
 								</form>
 							</div>
