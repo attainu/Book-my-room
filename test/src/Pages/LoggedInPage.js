@@ -4,17 +4,7 @@ import { upadateLoggedIn } from './../actions'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import img from './../assets/img/logo.png';
-
-
-
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { Row, Col } from 'react-bootstrap';
-import Image from 'react-bootstrap/Image';
+import HomeV2 from '../components/homev2';
 
 
 function NavBar(props) {
@@ -44,21 +34,11 @@ function NavBar(props) {
                                         <li >
                                             <Link to="/">Home</Link>
                                         </li>
-                                        <li className="have-submenu">
-                                            <Link to="/room-list">Rooms</Link>
-                                            <ul className="submenu">
-                                                <li><Link to="/room-list">Room List</Link></li>
-                                                <li><Link to="/room-grid">Room Gird</Link></li>
-                                                <li><Link to="/room-details">Room Details</Link></li>
-                                            </ul>
-                                        </li>
-
+                                    
                                         <li><Link to="/contact">Contact</Link></li>
                                        
-                                            <Button> {firebase.auth.currentUser.displayName}</Button>
-
-                                            <Button onClick={LogOut}>Log Out</Button>
-                                      
+                                            <li><Link> {firebase.auth.currentUser.displayName}</Link></li>
+                                            <li><Link  onClick={LogOut}>Log Out</Link></li>  
                                     </ul>
                                 </nav>
                             </div>
@@ -77,12 +57,14 @@ function WelcomePage(props) {
         props.history.replace("/");
     }
     var isLogged = useSelector(state => state.isLogged);
-    if (isLogged) {
+    if (!isLogged) {
         props.history.replace("/");
     }
     return (
         <div>
             <NavBar />
+            <HomeV2/>
+
         </div>
     );
 }

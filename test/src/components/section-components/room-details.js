@@ -24,8 +24,9 @@ class RoomDetails extends Component {
 	    }
 		
     	render(){
-    		let publicUrl = process.env.PUBLIC_URL + '/'
-    		let imagealt = 'image'
+    		// let publicUrl = process.env.PUBLIC_URL + '/'
+    		// let imagealt = 'image'
+    		var mapa = `https://maps.google.com/maps?width=1920&height=670&hl=en&q=${this.state.room.address}+('mapa')&ie=UTF8&t=&z=14&iwloc=B&output=embed`
 		return (<section className="room-details-wrapper section-padding">
 			<div className="container" >
 				<div className="row">
@@ -67,13 +68,13 @@ class RoomDetails extends Component {
                         <h2 className="entry-title text-justifys">{this.state.room.name}</h2>
 						{/* Room Details */}
 						<div className="room-details">
-							<div className="entry-header">
+							{/* <div className="entry-header">
 								<ul className="entry-meta list-inline">
 									<li><i className="far fa-bed" />3 Bed</li>
 									<li><i className="far fa-bath" />2 Baths</li>
 									<li><i className="far fa-ruler-triangle" />72 m</li>
 								</ul>
-							</div>
+							</div> */}
 							<div className="room-details-tab">
 								<div className="row">
 									<div className="col-sm-3">
@@ -97,7 +98,7 @@ class RoomDetails extends Component {
 													<p>{this.state.room.description}</p>
 													<div className="row mt-1 mb-1">
 													   <div className="col-3">
-													       <p><b><i classname="fas fa-phone"></i> Phone</b></p>
+													       <p><b><i classname="fas fa-phone-alt"></i> Phone</b></p>
 													   </div>
 													   <div className="col-9">
 													      <p>{this.state.room.phone}</p>
@@ -128,10 +129,10 @@ class RoomDetails extends Component {
 											</div>
 											<div role="tabpanel" className="tab-pane fade" id="location">
 												<h5 className="tab-title">Location</h5>
-												<div style={{ overflow: 'hidden', width: '585px', position: 'relative' }}><iframe width={585} height={580} src="https://maps.google.com/maps?width=1920&height=670&hl=en&q=delhi%2C%20United%20Kingdom+(Title)&ie=UTF8&t=&z=10&iwloc=B&output=embed" frameBorder={0} scrolling="no" marginHeight={0} marginWidth={0} /><div style={{ position: 'absolute', width: '80%', bottom: '10px', left: 0, right: 0, marginLeft: 'auto', marginRight: 'auto', color: '#000', textAlign: 'center' }}><small style={{ lineHeight: '1.8', fontSize: '2px', background: '#fff' }}>Powered by <a href="https://embedgooglemaps.com/es/">Embedgooglemaps ES</a> &amp; <a href="https://www.jubler.org/">increase website traffic</a></small></div><style dangerouslySetInnerHTML={{ __html: "#gmap_canvas img{max-width:none!important;background:none!important}" }} /></div><br />
+												<div style={{ overflow: 'hidden', width: '550px', position: 'relative' }}><iframe width={585} height={580} src={mapa} frameBorder={0} scrolling="no" marginHeight={0} marginWidth={0} /><div style={{ position: 'absolute', width: '80%', bottom: '10px', left: 0, right: 0, marginLeft: 'auto', marginRight: 'auto', color: '#000', textAlign: 'center' }}><small style={{ lineHeight: '1.8', fontSize: '2px', background: '#fff' }}>Powered by <a href="https://embedgooglemaps.com/es/">Embedgooglemaps ES</a> &amp; <a href="https://www.jubler.org/">increase website traffic</a></small></div><style dangerouslySetInnerHTML={{ __html: "#gmap_canvas img{max-width:none!important;background:none!important}" }} /></div><br />
 												<div className="room-location">
 													<div className="row">
-														<div className="col-4 tex-center">
+														<div className="col-4 text-center">
 															<h6>Country</h6>
 															<p>{this.state.room.address_obj && this.state.room.address_obj.country}</p>
 														</div>
@@ -145,7 +146,7 @@ class RoomDetails extends Component {
 														</div>
 													</div>
 
-													<div className="row">
+													<div className="row mt-2">
 													    <div className="col-6 text-center">
 															<h6>Street(s)</h6>
 															<p>{this.state.room.address_obj && this.state.room.address_obj.street1}</p>
@@ -155,6 +156,22 @@ class RoomDetails extends Component {
 													        <h6>Postal Code</h6>
 													        <p>{this.state.room.address_obj && this.state.room.address_obj.postalcode}</p>
 													    </div>
+													</div>
+
+                                                    <hr/>
+													<div className="row mt-2">
+														<div className="col-12">
+															<h6 style={{textAlign: "center"}}>Neighborhood(s)</h6>
+														</div>
+													</div>
+													<div className="row">
+														{
+															
+															this.state.room.neighborhood_info && this.state.room.neighborhood_info.map(neighborhood => {
+																return(<div className="col-3"><p>{neighborhood.name}</p></div>)
+															})
+														}
+														<br/>
 													</div>
 												</div>
 											</div>
@@ -252,9 +269,9 @@ class RoomDetails extends Component {
 										</select>
 									</div>
 									<div className="input-wrap">
-										<button type="submit" className="btn filled-btn btn-block">
+									<Link to="/room-booking" className="btn filled-btn btn-block">
 											book now <i className="far fa-long-arrow-right" />
-										</button>
+										</Link>
 									</div>
 								</form>
 							</div>

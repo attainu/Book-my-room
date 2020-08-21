@@ -6,8 +6,6 @@ class ContactInfo extends Component {
 
     render() {
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
-        let imagealt = 'image'
 
     return <section className="contact-info-section">
 			  <div className="container">
@@ -39,7 +37,7 @@ class ContactInfo extends Component {
 			            </div>
 			            <h4>Address</h4>
 			            <p>GymVast, 18 East 50th Street,</p>
-			            <p> 4th Floor, New York, NY 22</p>
+			            <p> 4th Floor, 205 Main Road,Delhi</p>
 			          </div>
 			        </div>
 			        <div className="col-lg-4 col-md-6">
@@ -49,7 +47,7 @@ class ContactInfo extends Component {
 			            </div>
 			            <h4>Address</h4>
 			            <p><a href="#">support@gmail.com</a></p>
-			            <p><a href="#">www.avason.net </a></p>
+			            <p><a href="#">www.BookMyHotel.com </a></p>
 			          </div>
 			        </div>
 			        <div className="col-lg-4 col-md-6 mx-auto">

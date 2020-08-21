@@ -1,41 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router,  Route, Switch } from "react-router-dom";
-import Home from './components/home';
-import RoomList from './components/room-list';
-import RoomDetails from './components/room-details';
-import Contact from './components/contact';
-import Main from './Pages/LoginSignUpPage'
-import {createStore} from 'redux';
-import allReducers from "./reducers";
-import {Provider} from 'react-redux';
-import Welcomepage from './Pages/LoggedInPage'
+import App from './App';
 
-const store = createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-class Root extends Component {
-    render() {
-        return(
-			<Provider store={store}>
-                <Router basename="/">
-	                <div>
-	                <Switch>
-	                    <Route exact path="/" component={Home} />
-						<Route path="/login" component={Main} />
-						<Route exact path="/loggedin" component={Welcomepage} />
-	                    <Route path="/room-list" component={RoomList} />
-	                    <Route path="/room-details" component={RoomDetails} />
-	                    <Route path="/contact" component={Contact} />     
-	                </Switch>
-	                </div>
-                </Router>
-			</Provider>
-        )
-    }
-}
-export default Root;
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('div')
+);
 
-ReactDOM.render(<Root />, document.getElementById('avson'));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
 
 
 

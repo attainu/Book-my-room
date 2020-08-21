@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
+import img from '../../images/314.jpg'
 
 class Features extends Component {
 
     render() {
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
+       
 
     return <section className="wcu-section section-bg section-padding">
 		  <div className="container">
@@ -48,7 +49,7 @@ class Features extends Component {
 		              <p>Popular Features</p>
 		            </div>
 		          </div>
-		          <img src={publicUrl+"assets/img/tile-gallery/02.jpg" }alt="Image" />
+		          <img src={img}alt="Image" />
 		        </div>
 		      </div>
 		    </div>

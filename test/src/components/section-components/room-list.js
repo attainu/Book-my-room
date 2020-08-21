@@ -1,16 +1,66 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import parse from 'html-react-parser';
-import { useSelector } from 'react-redux';
+import {connect} from 'react-redux';
+import { upadateFetchedDataFromApi } from './../../actions';
 
-function RoomList() {
+class RoomList extends Component {
+	constructor(props){
+		super(props)
+		if(this.props.data.length == 0){
+			this.getHotels()
+		}
+	}
 
-	var data = useSelector(state=>state.dataFromApi);
-	
+	async getHotels(){
+		var city = "mumbai";
+        var location_id = await this.GetCityId(city);
+		var url = `https://tripadvisor1.p.rapidapi.com/hotels/list?offset=0&currency=USD&limit=30&order=asc&lang=en_US&sort=recommended&location_id=${location_id}&adults=1&checkin=%3Crequired%3E&rooms=1&nights=2`;
 
-	let publicUrl = process.env.PUBLIC_URL + '/'
+		var options = {
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+				"x-rapidapi-key": "9d06efcbb8msha01ff82dbda6289p1c7f0cjsn00aba3a126b9"
+			}
+		};
+		var res = await fetch(url, options);
+		var data = await res.json();
+		this.props.dispatch(upadateFetchedDataFromApi(data.data));
+	}
+
+	async GetCityId(city){
+
+		city = city.replace(" ", "%20");
+
+		var url = `https://tripadvisor1.p.rapidapi.com/locations/auto-complete?lang=en_US&units=km&query=${city}`
+
+
+		var options = {
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+				"x-rapidapi-key": "9d06efcbb8msha01ff82dbda6289p1c7f0cjsn00aba3a126b9"
+			}
+		};
+		var res = await fetch(url, options);
+		var data = await res.json();
+
+		console.log(data);
+		var loc_id;
+		for (const i of data.data) {
+			if (i.result_type == "geos") {
+				loc_id = i.result_object.location_id;
+				break;
+			}
+		}
+		return loc_id;
+
+	}
+
+    render(){
+    let publicUrl = process.env.PUBLIC_URL + '/'
 	let imagealt = 'image'
-
 	return (<section className="rooms-warp list-view section-bg section-padding ">
 		<div className="container">
 			<div className="row">
@@ -116,7 +166,7 @@ function RoomList() {
 
 				<div className="col-lg-8">
 					{/* Single Room */}
-					{data&&data.map(room => {
+					{this.props.data && this.props.data.map(room => {
 						console.log(room);
 						return(
 						<div className="single-room list-style avson-go-top">
@@ -167,9 +217,12 @@ function RoomList() {
 			</div>
 		</div>
 	</section>)
-
-
-
+    }
 }
 
-export default  withRouter(RoomList);
+const mapStateToProps = (state) => {
+    return {
+        data: state.dataFromApi
+    }
+}
+export default  withRouter(connect(mapStateToProps)(RoomList));

@@ -29,10 +29,10 @@ class Footer_v1 extends Component {
 			            </div>
 			            <p>Avoids pleasure itself, because pleasure, but because those who do not</p>
 			            <ul className="social-icons">
-			              <li><a href="https://www.facebook.com/webtend/"><i className="fab fa-facebook-f" /></a></li>
-			              <li><a href="https://twitter.com/webtend"><i className="fab fa-twitter" /></a></li>
-			              <li><a href="https://instagram.com/webtend"><i className="fab fa-instagram" /></a></li>
-			              <li><a href="https://google.com/webtend"><i className="fab fa-google" /></a></li>
+			              <li><a href="https://www.facebook.com"><i className="fab fa-facebook-f" /></a></li>
+			              <li><a href="https://twitter.com"><i className="fab fa-twitter" /></a></li>
+			              <li><a href="https://instagram.com"><i className="fab fa-instagram" /></a></li>
+			              <li><a href="https://google.com"><i className="fab fa-google" /></a></li>
 			            </ul>
 			          </div>
 			        </div>
