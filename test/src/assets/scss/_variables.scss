@@ -1,0 +1,35 @@
+// Font Variables
+$body-font: 'Open Sans', sans-serif;
+$title-font: 'Montserrat', sans-serif;
+
+// Color Variables
+$primary-color: #fea116;
+$secondary-color: #0f172b;
+$third-color: #dfe9f4;
+$text-color: #666565;
+$white: #fff;
+$secondary-text-color: #aeb7ca;
+
+//Font-weight
+$fw-700: 700;
+$fw-600: 600;
+$fw-500: 500;
+$fw-400: 400;
+$fw-300: 300;
+// Mixins
+@mixin transition(
+	$property: all,
+	$duration: 400ms,
+	$animate: ease-out,
+	$delay: 0s
+) {
+	transition: $property $duration $animate $delay;
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-o-transform: $transform;
+	-ms-transform: $transform;
+	transform: $transform;
+}

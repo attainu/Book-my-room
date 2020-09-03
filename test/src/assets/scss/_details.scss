@@ -1,0 +1,519 @@
+/* Blog and Room Details Page
+============================================================================================ */
+.post-thumb {
+	margin-bottom: 30px;
+	overflow: hidden;
+	.price-tag {
+		position: absolute;
+		right: 30px;
+		top: 30px;
+		padding: 15px 25px;
+		font-weight: $fw-700;
+		font-size: 24px;
+		background-color: $primary-color;
+		color: $white;
+		z-index: 1;
+		border-radius: 5px;
+	}
+	img {
+		@include transition;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+	.single-dots img:hover {
+		transform: none;
+	}
+}
+.room-cat {
+	a {
+		background-color: $primary-color;
+		color: $white;
+		border-radius: 5px;
+		padding: 10px 15px;
+		font-weight: $fw-700;
+		font-size: 14px;
+		display: inline-block;
+	}
+	margin-bottom: 30px;
+}
+.entry-title {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+.entry-meta {
+	margin-bottom: 20px;
+	li {
+		margin-right: 30px;
+		a {
+			color: $text-color;
+		}
+		i {
+			color: $primary-color;
+			font-size: 15px;
+			margin-right: 8px;
+		}
+	}
+}
+.entry-content {
+	.entry-gallery-img {
+		margin: 60px 0;
+	}
+	figure.entry-media-img {
+		img {
+			width: 100%;
+			@include transition;
+		}
+		&:hover img {
+			transform: scale(1.2);
+		}
+	}
+	blockquote {
+		padding-left: 35px;
+		font-size: 20px;
+		line-height: 28px;
+		font-family: $title-font;
+		color: $secondary-color;
+		font-weight: $fw-700;
+		position: relative;
+		&::before {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 5px;
+			left: 0;
+			background: $primary-color;
+			content: '';
+		}
+		.blockquote-v {
+			font-size: 18px;
+			color: $text-color;
+		}
+	}
+}
+.entry-footer {
+	margin-top: 35px;
+	.popular-tag {
+		li {
+			a {
+				font-size: 15px;
+				color: $text-color;
+			}
+			&.title {
+				font-size: 16px;
+				color: $secondary-color;
+				font-weight: $fw-700;
+			}
+		}
+	}
+	.social-share {
+		li {
+			a {
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+				line-height: 30px;
+				font-size: 14px;
+				color: #626e8b;
+				background-color: $third-color;
+				border-radius: 50%;
+				margin-left: 10px;
+				text-align: center;
+				@include transition;
+				&:hover {
+					background-color: $primary-color;
+					color: $white;
+				}
+			}
+			&.title {
+				font-size: 16px;
+				color: $secondary-color;
+				font-weight: $fw-700;
+			}
+		}
+	}
+}
+.room-details-wrapper {
+	.room-specification {
+		.specific-title {
+			font-size: 24px;
+			margin-bottom: 20px;
+			line-height: 35px;
+		}
+		.pricing-plan {
+			font-size: 15px;
+			table {
+				width: 100%;
+				td {
+					padding-bottom: 15px;
+					&.big {
+						font-weight: $fw-600;
+						font-size: 18px;
+						text-align: right;
+					}
+				}
+			}
+		}
+		.feature,
+		.facilities {
+			margin-bottom: 55px;
+			padding-left: 50px;
+			li {
+				font-size: 15px;
+				line-height: 32px;
+			}
+		}
+		.accomodation,
+		.bedrooms {
+			margin-bottom: 30px;
+			font-size: 15px;
+			line-height: 26px;
+		}
+	}
+	.sidebar-wrap {
+		.widget {
+			background-color: $third-color;
+		}
+	}
+	.main-slider {
+		position: relative;
+		.single-img {
+			overflow: hidden;
+		}
+		.slick-arrow {
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $white;
+			z-index: 1;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			background: $secondary-color;
+			font-size: 18px;
+			@include transition;
+			opacity: 0;
+			visibility: hidden;
+			cursor: pointer;
+			&.next {
+				left: auto;
+				right: 20px;
+			}
+			&:hover {
+				background-color: $primary-color;
+			}
+		}
+
+		&:hover {
+			.slick-arrow {
+				opacity: 1;
+				visibility: visible;
+				left: 0;
+				&.next {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+	.dots-slider {
+		margin-top: 30px;
+		margin-left: -15px;
+		margin-right: -15px;
+		.single-dots {
+			cursor: pointer;
+		}
+	}
+	.entry-title {
+		font-size: 50px;
+	}
+	.room-details-tab {
+		margin-top: 50px;
+		.nav.desc-tab-item {
+			display: inherit;
+			li {
+				display: block;
+				margin-bottom: 15px;
+				a.nav-link {
+					color: #666565;
+					font-size: 18px;
+					font-weight: 600;
+					position: relative;
+					padding: 5px 0;
+					border-bottom: 1px solid #6665554f;
+					&.active,
+					&:hover {
+						color: $primary-color;
+						border-color: $primary-color;
+					}
+				}
+			}
+		}
+		.tab-title {
+			margin-bottom: 20px;
+		}
+		.reviews-count {
+			margin-bottom: 50px;
+			.count-num {
+				height: 100%;
+				width: 100%;
+				background: $secondary-color;
+				color: $white;
+				p {
+					font-size: 18px;
+					span {
+						display: block;
+						font-size: 35px;
+						font-weight: $fw-700;
+						margin-bottom: 8px;
+						text-align: center;
+					}
+				}
+			}
+			.single-bar {
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				p.bar-title {
+					margin-bottom: 10px;
+					font-weight: $fw-600;
+					font-family: $title-font;
+					span {
+						float: right;
+					}
+				}
+				.bar {
+					width: 100%;
+					height: 6px;
+					background: $secondary-color;
+					border-radius: 5px;
+					.bar-inner {
+						width: 0;
+						height: 6px;
+						line-height: 6px;
+						border-radius: 5px;
+						background: $primary-color;
+					}
+				}
+			}
+		}
+		#roomMaps {
+			margin-bottom: 30px;
+			width: 100%;
+			height: 400px;
+		}
+		.comment-area {
+			background-color: #fff;
+			margin-bottom: 50px;
+			padding: 15px 0;
+			border-top: 1px solid #6665554f;
+			border-bottom: 1px solid #6665554f;
+			.comment-desc {
+				position: relative;
+				.autor-rating {
+					position: absolute;
+					right: 0;
+					top: -5px;
+					font-size: 13px;
+					color: $primary-color;
+				}
+			}
+		}
+		.review-form {
+			.star-given-box {
+				margin-bottom: 12px;
+				li {
+					margin-right: 15px;
+					margin-bottom: 18px;
+					.st-title {
+						font-weight: $fw-600;
+					}
+					i {
+						color: $secondary-color;
+						@include transition;
+						font-size: 14px;
+						&:hover {
+							color: $primary-color;
+						}
+					}
+				}
+			}
+			.input-wrap {
+				margin-bottom: 30px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				&.text-area {
+					margin-bottom: 20px;
+				}
+			}
+			input,
+			button {
+				height: 60px;
+				line-height: 60px;
+			}
+			button {
+				@include transition;
+				font-size: 14px;
+				&:hover {
+					color: $white;
+					background: $secondary-color;
+				}
+			}
+			input,
+			textarea ::placeholder {
+				font-size: 14px;
+				color: $text-color;
+			}
+		}
+	}
+}
+.post-details {
+	padding: 50px 30px;
+	background-color: $white;
+	margin-bottom: 60px;
+	.post-thumb {
+		margin: -50px -30px 30px -30px;
+	}
+}
+.post-nav {
+	background-color: $white;
+	margin-bottom: 60px;
+	padding: 35px 40px;
+	.post-nav-box {
+		padding: 30px;
+		background-color: $third-color;
+		@include transition;
+		a {
+			color: $secondary-color;
+			font-size: 20px;
+			line-height: 28px;
+			font-family: $title-font;
+			font-weight: $fw-700;
+			@include transition;
+		}
+		&:hover {
+			background-color: $secondary-color;
+			a {
+				color: $white;
+			}
+		}
+	}
+}
+.comment-area {
+	background-color: $white;
+	margin-bottom: 75px;
+	padding: 60px 70px 60px 40px;
+	.comment-list {
+		li {
+			padding-left: 130px;
+			position: relative;
+			min-height: 100px;
+			margin-bottom: 50px;
+			.comment-autor {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100px;
+				height: 100px;
+				img {
+					max-width: 100px;
+					max-height: 100px;
+					border-radius: 50px;
+				}
+			}
+			.comment-desc {
+				font-size: 15px;
+				line-height: 28px;
+				h6 {
+					font-size: 18px;
+					line-height: 20px;
+					margin-bottom: 10px;
+					span {
+						font-size: 13px;
+						font-weight: 300;
+						font-family: $body-font;
+					}
+				}
+				a.reply-comment {
+					font-weight: $fw-700;
+					font-family: $title-font;
+					font-size: 14px;
+					margin-top: 10px;
+					color: $text-color;
+					@include transition;
+					i {
+						font-size: 18px;
+						margin-left: 8px;
+						position: relative;
+						top: 3px;
+					}
+					&:hover {
+						color: $primary-color;
+					}
+				}
+			}
+			ul.children {
+				margin-left: -100px;
+				li {
+					margin-bottom: 0;
+					margin-top: 50px;
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.comment-title,
+.comment-form-title {
+	font-size: 30px;
+	line-height: 42px;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	position: relative;
+	&::after,
+	&::before {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 18px;
+		height: 3px;
+		background-color: $primary-color;
+		content: '';
+	}
+	&::after {
+		left: 24px;
+		width: 40px;
+	}
+}
+.comment-form {
+	background-color: $white;
+	padding: 60px 30px;
+	.input-wrap {
+		margin-bottom: 20px;
+		input {
+			height: 70px;
+			line-height: 70px;
+		}
+		input:focus,
+		textarea:focus {
+			outline: 2px solid $primary-color;
+		}
+	}
+	.btn {
+		padding: 25px 45px;
+		font-size: 15px;
+		border-radius: 35px;
+	}
+}
+figure {
+	margin: 0;
+	overflow: hidden;
+}
+/* Blog and Room Details END
+============================================================================================ */

@@ -1,0 +1,215 @@
+/* Massonary Gallery Start
+============================================================================================ */
+.gallery-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 304px;
+	z-index: 1;
+	@include transition;
+	border-width: 0px;
+	&::after {
+		position: absolute;
+		z-index: -2;
+		content: '';
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $secondary-color;
+		opacity: 0;
+		visibility: hidden;
+		@include transition;
+	}
+	&::before {
+		position: absolute;
+		z-index: -1;
+		content: '';
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		border: 20px solid transparent;
+		opacity: 0;
+		visibility: hidden;
+		@include transition;
+	}
+	.gallery-box-content {
+		text-align: center;
+		opacity: 0;
+		visibility: hidden;
+		@include transition;
+		.view-more {
+			color: $white;
+			margin-bottom: 20px;
+			font-size: 30px;
+			display: inline-block;
+		}
+		&,
+		h3 {
+			color: $white;
+		}
+		h3 {
+			font-size: 24px;
+			line-height: 25px;
+		}
+	}
+	&:hover::after,
+	&:hover::before,
+	&:hover .gallery-box-content {
+		visibility: visible;
+		opacity: 1;
+	}
+	&:hover::after {
+		opacity: 0.73;
+	}
+	&:hover::before {
+		border-color: $primary-color;
+	}
+	&.big {
+		height: 638px;
+		.gallery-box-content {
+			line-height: 50px;
+			font-size: 28px;
+			.view-more {
+				font-size: 50px;
+				margin-bottom: 30px;
+			}
+			h3 {
+				font-size: 50px;
+				margin-bottom: 20px;
+			}
+		}
+		&:hover::before {
+			border-width: 30px;
+		}
+	}
+	&.semi-big,
+	&.small {
+		margin-bottom: 30px;
+	}
+	&.small {
+		.gallery-box-content {
+			font-size: 14px;
+			h3 {
+				font-size: 18px;
+			}
+		}
+		&:hover::before {
+			border-width: 8px;
+		}
+	}
+}
+
+.ma-gallery-section .section-title h1 {
+	margin-bottom: 75px;
+}
+
+.gallery-items {
+	.gallery-item {
+		height: 370px;
+		background-size: cover;
+		position: relative;
+		background-position: center;
+		margin-bottom: 30px;
+		z-index: 1;
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			content: '';
+			background-color: $secondary-color;
+			opacity: 0;
+			visibility: hidden;
+			@include transition;
+		}
+		.gallery-content {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			padding: 40px;
+			visibility: hidden;
+			opacity: 0;
+			@include transition;
+			z-index: 1;
+			h3 {
+				a {
+					color: $white;
+				}
+			}
+			.view-gallery {
+				position: absolute;
+				right: 40px;
+				bottom: 30px;
+				left: auto;
+				top: auto;
+				height: 50px;
+				width: 50px;
+				border-radius: 50%;
+				background-color: $primary-color;
+				color: $white;
+				font-size: 18px;
+				line-height: 50px;
+				text-align: center;
+			}
+		}
+		&:hover::before,
+		&:hover .gallery-content {
+			opacity: 0.6;
+			visibility: visible;
+		}
+		&:hover .gallery-content {
+			opacity: 1;
+		}
+	}
+}
+
+.gallery-warp .pagination-wrap {
+	margin-top: 50px;
+}
+.gallery-filter {
+	margin-bottom: 60px;
+	li {
+		font-size: 20px;
+		color: $secondary-color;
+		font-family: $title-font;
+		font-weight: $fw-700;
+		margin: 0 30px;
+		@include transition;
+		position: relative;
+		cursor: pointer;
+		&:before {
+			content: '\f178';
+			font-family: 'Font Awesome 5 Pro';
+			font-size: 24px;
+			left: 0;
+			position: absolute;
+			color: $primary-color;
+			visibility: hidden;
+			opacity: 0;
+			@include transition;
+		}
+		&:hover,
+		&.active {
+			padding-left: 45px;
+			color: $primary-color;
+			&::before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+.gallery-page {
+	.breadcrumb-area h1.big-text {
+		top: 38%;
+	}
+}
+/* Massonary Gallery Start
+============================================================================================ */
